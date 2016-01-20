@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Tahoma, sans-serif;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 ul {
     margin: 0;
@@ -13,7 +13,8 @@ li {
 
 .header-container {
     height: 70px;
-    background: #3c48dd;
+    background-color: #1388d8;
+    border-bottom: 1px solid #fff;
     color: #fff;
     text-align: center;
 }
@@ -29,8 +30,12 @@ li {
 }
 .left-sidebar {
     width: 25%;
+    border-right: 1px solid #e3e5e6;
+    box-sizing: border-box;
 }
-
+.main {
+    color: #195b8a;
+}
 .main-content {
     width: 75%;
 }
@@ -39,10 +44,12 @@ li {
     padding: 10px 5px;
     font-size: 15px;
     text-transform: uppercase;
+    font-weight: bold;
+    background-color: #e3e5e6;
 }
 
 .dl-list__item {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #e3e5e6;
     font-size: 13px;
 }
 
