@@ -27,11 +27,18 @@ li {
 }
 .header-title {
     display: inline-block;
+    vertical-align: middle;
+}
+.logo {
+    background: url(../images/logo.png) no-repeat 0 0 transparent;
+    height: 22px;
+    width: 176px;
 }
 .left-sidebar {
     width: 25%;
     border-right: 1px solid #e3e5e6;
     box-sizing: border-box;
+    overflow-y: auto;
 }
 .main {
     color: #195b8a;
