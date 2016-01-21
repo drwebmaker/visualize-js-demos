@@ -125,6 +125,10 @@ li {
     font-size: 13px;
 }
 
+.dl-list__item--selected{
+    color: blue;
+}
+
 .dl-list__item a {
     display: block;
     padding: 10px 5px;

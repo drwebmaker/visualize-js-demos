@@ -5,13 +5,14 @@
     <title>Visualize.js Demo</title>
     <link rel="stylesheet" href="./css/main.css"/>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//rawgit.com/flatiron/director/master/build/director.min.js"></script>
 
 </head>
 <body>
 
 <header>
     <div class="header-container">
-        <div class="icon-list" onclick="openList()"></div>
+        <div class="icon-list"></div>
 
         <div class="header-title">
             <div class="logo"></div>
@@ -28,14 +29,21 @@
                 <div class="dl-header">Reporting</div>
                 <div class="dl-list">
                     <ul>
-                        <li class="dl-list__item"><a href="#">Render report in container with explicit dimensions</a></li>
-                        <li class="dl-list__item"><a href="#">Render with Parameters</a></li>
-                        <li class="dl-list__item"><a href="#">Pagination (Next/Previous)</a></li>
-                        <li class="dl-list__item"><a href="#">Pagination (Range)</a></li>
+                        <li class="dl-list__item">
+                            <a href="#/demos/report-basic-render">Render report in container with explicit dimensions</a></li>
+                        <li class="dl-list__item">
+                            <a href="#/demos/report-render-with-params">Render with Parameters</a>
+                        </li>
+                        <li class="dl-list__item">
+                            <a href="#/demos/report-basic-pagination">Pagination (Next/Previous)</a>
+                        </li>
+                        <li class="dl-list__item">
+                            <a href="#/demos/report-pagination-range">Pagination (Range)</a>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <div class="icon-cross" onclick="closeList()"></div>
+            <div class="icon-cross"></div>
         </div>
 
     </div><!--
