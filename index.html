@@ -4,36 +4,49 @@
     <meta charset="UTF-8">
     <title>Visualize.js Demo</title>
     <link rel="stylesheet" href="./css/main.css"/>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 
 </head>
 <body>
 
 <header>
     <div class="header-container">
+        <div class="icon-list" onclick="openList()"></div>
+
         <div class="header-title">
-            HEADER
+            <div class="logo"></div>
         </div>
     </div>
 </header>
-<div class="main">
-    <div class="left-sidebar l-inline">
-        <div class="demo-list-block">
-            <div class="dl-header">Reporting</div>
-            <div class="dl-list">
-                <ul>
-                    <li class="dl-list__item"><a href="#">Render report in container with explicit dimensions</a></li>
-                    <li class="dl-list__item"><a href="#">Render with Parameters</a></li>
-                    <li class="dl-list__item"><a href="#">Pagination (Next/Previous)</a></li>
-                    <li class="dl-list__item"><a href="#">Pagination (Range)</a></li>
-                </ul>
-            </div>
+<div class="main-container">
+    <div class="left-sidebar l-inline l-offscreen__sidebar--left">
+        <div class="left-sidebar-header">
+
         </div>
+        <div class="left-sidebar-container">
+            <div class="demo-list-block">
+                <div class="dl-header">Reporting</div>
+                <div class="dl-list">
+                    <ul>
+                        <li class="dl-list__item"><a href="#">Render report in container with explicit dimensions</a></li>
+                        <li class="dl-list__item"><a href="#">Render with Parameters</a></li>
+                        <li class="dl-list__item"><a href="#">Pagination (Next/Previous)</a></li>
+                        <li class="dl-list__item"><a href="#">Pagination (Range)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="icon-cross" onclick="closeList()"></div>
+        </div>
+
     </div><!--
     --><div class="main-content l-inline">
-        <iframe width="100%" height="600" src="//jsfiddle.net/drwebmaker/gyxzxq8a/1/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+        <iframe class="jsfiddle-viewer" src="//jsfiddle.net/drwebmaker/gyxzxq8a/1/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
     </div>
+    <div class="l-offscreen__overlay"></div>
 </div>
 <footer></footer>
 
+
+<script src="./js/main.js"></script>
 </body>
 </html>
