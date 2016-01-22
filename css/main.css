@@ -29,6 +29,7 @@ li {
     vertical-align: middle;
 }
 .header-title {
+    font-size: 24px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -148,6 +149,9 @@ li {
 @media only screen and (max-width: 750px) {
     .header-container {
         height: 40px;
+    }
+    .header-title {
+        font-size: 16px;
     }
     .icon-list {
         display: block;
