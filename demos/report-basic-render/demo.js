@@ -9,7 +9,14 @@ visualize({
         v("#report-container").report({
             resource: "/public/Samples/Reports/Cities",
             error: function (err) {
-                alert("Can't render report: " + err.message);
+                alert("Report 1: " + err.message);
+            }
+        });
+
+        v("#report-container2").report({
+            resource: "/public/Samples/Reports/States",
+            error: function (err) {
+                alert("Report 2: " + err.message);
             }
         });
 

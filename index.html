@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <title>Visualize.js Demo</title>
     <link rel="stylesheet" href="./css/main.css"/>
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="//rawgit.com/flatiron/director/master/build/director.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
 
+    <!--<script src="//rawgit.com/flatiron/director/master/build/director.min.js"></script>-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+    <!--<script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>-->
+    <script data-main="js/app" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.22/require.min.js"></script>
+    <!--<script src="http://localhost:8080/jasperserver-pro/client/visualize.js"></script>-->
 </head>
 <body>
 
@@ -48,13 +52,68 @@
 
     </div><!--
     --><div class="main-content l-inline">
-        <iframe class="jsfiddle-viewer" src="//jsfiddle.net/drwebmaker/gyxzxq8a/1/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+        <!--<iframe class="jsfiddle-viewer" src="//jsfiddle.net/drwebmaker/erLyvg5n/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>-->
+        <div class="demo-viewer">
+            <div class="dv-tabs">
+                <ul class="tabs-menu">
+                    <li class="tabs-menu__item current"><a href="#tab-1">JavaScript</a></li>
+                    <li class="tabs-menu__item"><a href="#tab-2">HTML</a></li>
+                    <li class="tabs-menu__item"><a href="#tab-3">Result</a></li>
+                </ul>
+            </div>
+            <div class="dv-content">
+                <div id="tab-1" class="dv-content--js tab-content">
+                    <pre><code class="code-container js">
+    visualize({
+            auth: {
+                name: "superuser",
+                password: "superuser"
+            }
+        },
+        function (v) {
+            v("#report-container").report({
+                resource: "/public/Samples/Reports/Cities",
+                error: function (err) {
+                    alert("Can't render report: " + err.message);
+                }
+            });
+        }
+    );
+                    </code></pre>
+                </div>
+
+                <div id="tab-2"  class="dv-content--html tab-content">
+                    <pre><code class="code-container html">
+    &lt;script src=&quot;http://localhost:8080/jasperserver-pro/client/visualize.js&quot;&gt;&lt;/script&gt;
+    &lt;div id=&quot;report-container&quot;&gt&lt;/div&gt;
+                    </code></pre>
+                </div>
+                <div id="tab-3"  class="dv-content--result tab-content">
+                    <div class="code-container result">
+                        <iframe id="iframe"></iframe>
+                    </div>
+
+                </div>
+            </div>
+            <div class="dv-button-container">
+                <a href="#" class="button button-jsfiddle">Edit in JSFiddle</a>
+            </div>
+        </div>
     </div>
     <div class="l-offscreen__overlay"></div>
 </div>
-<footer></footer>
+<footer>
+
+</footer>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<!--<script src="http://localhost:8080/jasperserver-pro/client/visualize.js"></script>-->
+<div id="target"></div>
+<!--<script src="./demos/report-basic-pagination/demo.js"></script>-->
+<!--<script src="./js/main.js"></script>-->
 
 
-<script src="./js/main.js"></script>
 </body>
 </html>

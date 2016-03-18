@@ -1,14 +1,10 @@
 /**
- * Created by valeriy.abornyev on 1/19/2016.
+ * Created by valeriy.abornyev on 3/17/2016.
  */
-
 define(function (require) {
 
     'use strict';
-
-    var $ = require('jquery'),
-        underscore = require('underscore'),
-        director = require('director');
+    console.log("hello");
 
     function SideBar(){
 
@@ -46,17 +42,7 @@ define(function (require) {
 
 
     function showDemo(demoId){
-
         sideBar.selectItem(demoId);
-
-        var $iframe = $('#iframe');
-        $iframe.ready(function() {
-            $.get("./demos/" + demoId + "/demo.html", function(data) {
-                $iframe.contents().find("body").empty().append(data);
-            });
-            //$iframe.contents().find("body").empty().append(templ);
-            //console.log(templ);
-        });
 
         //$(".iframe-container").empty();
         //$.get("./demos/" + demoId + "/demo.html", function(template) {
@@ -84,8 +70,4 @@ define(function (require) {
         $(".tab-content").not(tab).css("display", "none");
         $(tab).fadeIn();
     });
-
-
-
 });
-
