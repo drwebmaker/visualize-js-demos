@@ -10,6 +10,9 @@ define(function (require) {
         underscore = require('underscore'),
         director = require('director');
 
+
+    var currentType;
+
     function SideBar(){
 
         var self = this;
@@ -51,20 +54,22 @@ define(function (require) {
 
         var $iframe = $('#iframe');
         $iframe.ready(function() {
-            $.get("./demos/" + demoId + "/demo.html", function(data) {
-                $iframe.contents().find("body").empty().append(data);
-            });
-            //$iframe.contents().find("body").empty().append(templ);
-            //console.log(templ);
-        });
 
-        //$(".iframe-container").empty();
-        //$.get("./demos/" + demoId + "/demo.html", function(template) {
-        //    $.tmpl(template).appendTo(".iframe-container .result");
-        //
-        //});
-        //$(".iframe-container #target").empty();
-        //$.tmpl( "<script src='./${demoId}/demo.js'></script>", { "demoId" : demoId }).appendTo(".iframe-container #target");
+            $iframe.attr("src", "./demos/" + demoId + "/demo-result.html");
+        });
+        showSource(demoId, 'js');
+        $('[data-type]').click(function () {
+            currentType = $(this).data().type;
+
+            switch (currentType) {
+                case 'html':
+                    showSource(demoId, 'html');
+                    break;
+                case 'js':
+                    showSource(demoId, 'js');
+                    break;
+            }
+        });
 
     }
 
@@ -84,6 +89,17 @@ define(function (require) {
         $(".tab-content").not(tab).css("display", "none");
         $(tab).fadeIn();
     });
+
+    function showSource(demoId, type) {
+        $.ajax({
+            url:"./demos/" +demoId + "/demo." + type,
+            dataType: "text",
+            type: "GET"
+        }).done(function(data) {
+            $(".code-container." + type).html(_.escape(data));
+        });
+    }
+
 
 
 
